@@ -1,4 +1,4 @@
-const CACHE_NAME = 'word-scramble-v1';
+const CACHE_NAME = 'word-scramble-v2';
 const FILES_TO_CACHE = [
   './index.html',
   './style.css',
