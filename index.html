@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Scramble Game</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#6a3fd4">
+<link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+
+  <div class="container">
+    <div class="top-bar">
+      <h1>
+        <svg class="title-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2l2.4 7.2H22l-6 4.4 2.3 7.2-6.3-4.5-6.3 4.5 2.3-7.2-6-4.4h7.6z"/>
+        </svg>
+        Word Scramble
+      </h1>
+
+      <div class="top-actions">
+        <button id="music-toggle-btn" class="theme-toggle" aria-label="Toggle music">
+          <!-- Sound on icon -->
+          <svg id="music-icon-on" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+          </svg>
+          <!-- Sound off icon -->
+          <svg id="music-icon-off" style="display:none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <line x1="22" y1="9" x2="16" y2="15"/>
+            <line x1="16" y1="9" x2="22" y2="15"/>
+          </svg>
+        </button>
+        <button id="theme-toggle-btn" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      </div>
+    </div>
+
+    <!-- Score & High Score -->
+    <div class="stats-bar">
+      <div class="stat">Score: <span id="score-display">0</span></div>
+      <div class="stat">Best: <span id="high-score-display">0</span></div>
+    </div>
+
+    <!-- Timer -->
+    <div class="card" id="timer-card">
+      <div class="timer-bar-bg">
+        <div class="timer-bar" id="timer-bar"></div>
+      </div>
+      <div id="timer-text">30s</div>
+    </div>
+
+    <!-- Game Card -->
+    <div class="card" id="game-card">
+      <div class="category-label" id="category-label">Category: Animals</div>
+      <div class="scrambled-word" id="scrambled-word">OMEH</div>
+
+      <div class="input-row">
+        <input type="text" id="guess-input" placeholder="Type your answer" autocomplete="off">
+        <button id="submit-btn">Submit</button>
+      </div>
+
+      <div id="feedback-message"></div>
+      <button id="skip-btn">Skip Word</button>
+    </div>
+
+    <!-- Game Over Card -->
+    <div class="card" id="gameover-card" style="display:none;">
+      <h2>Time's Up!</h2>
+      <p id="gameover-text"></p>
+      <button id="restart-btn">Play Again</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
